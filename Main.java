@@ -61,7 +61,7 @@ public class Main {
         //parser.showValidCommands();
         System.out.println("Type 'help' if you need it.");
         System.out.println("--------------------------------------------------------");
-        System.out.println("As you being to take your first step.. you listen into the darkness...");
+        System.out.println("As you begin to take your first step.. you listen into the darkness...");
 
         printGhostNoises();
 
@@ -159,16 +159,29 @@ public class Main {
         if(nextRoom == null) {
             System.out.println("Can't go there!");
         } else {
-            currentRoom = nextRoom;
-
-            //currentRoom.printCordinates();
             
             for (Ghost g : ghost) { 
-                if (g.isClosetoPlayer(currentRoom) == null) {		      
+                if (g.isClosetoPlayer(currentRoom) == null) {
                     g.move();
-                }   
+                    //System.out.print("Ghost moved. ");
+                    //System.out.print(g.isClosetoPlayer(currentRoom));
+                    //System.out.print(" ");
+                    //System.out.print(g.isClosetoPlayer(currentRoom) == null);
+                } //else {
+                    //System.out.print("Ghost did not move. ");
+                    //System.out.print(g.isClosetoPlayer(currentRoom));
+                    //System.out.print(" ");
+                    //System.out.printl(g.isClosetoPlayer(currentRoom) == null);
+                //}
+                
                 //g.printCordinates(); 		
             }
+            //currentRoom.printCordinates();
+
+            this.currentRoom = nextRoom;
+
+            //currentRoom.printCordinates();
+
             //roomLayout.printRoomWithKey();
             //print ghost descriptions 
         }
@@ -212,7 +225,7 @@ public class Main {
             System.out.println(closeDirections);
         }
         if (farDirections.size() == 0 && closeDirections.size() == 0) {
-            System.out.println("...You hear nothing... ...spooky...");
+            System.out.println("...You hear nothing......   .....spooky...");
         }
         System.out.println();
         farDirections.clear();
