@@ -81,14 +81,16 @@ public class Main {
         
             Command command = parser.getCommand();
             playerHasQuit = processCommand(command);
-            printGhostNoises();
 
             if (currentRoom.getHasKey() == true) {
                 playerHasWon = true;
+                break;
             }
             if(isMonsterInRoom(currentRoom)) {
                 playerHasDied = true;
+                break;
             }
+            printGhostNoises();
              
         }
         if (playerHasWon == true) {
