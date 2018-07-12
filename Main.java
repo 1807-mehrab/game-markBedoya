@@ -20,7 +20,7 @@ public class Main {
     public Main(){
         roomLayout = new RoomLayout();
         ghost = new ArrayList<Ghost>();
-        for (int i=0; i<5;i++) {
+        for (int i=0; i<4;i++) {
             ghost.add(new Ghost(roomLayout));
         }
         setCurrentRoom();
@@ -174,9 +174,9 @@ public class Main {
                     //System.out.printl(g.isClosetoPlayer(currentRoom) == null);
                 //}
                 
-                //g.printCordinates(); 		
+                g.printCordinates(); 		
             }
-            //currentRoom.printCordinates();
+            currentRoom.printCordinates();
 
             this.currentRoom = nextRoom;
 
@@ -199,15 +199,15 @@ public class Main {
 
     public void printGhostNoises() {
         ArrayList<String> dir = new ArrayList<>();
-        Set<String> farDirections = new HashSet<String>();
+        //Set<String> farDirections = new HashSet<String>();
         Set<String> closeDirections = new HashSet<String>();
         for (Ghost g : ghost) {
             
             if (g.isCloseEnoughToKillPlayer(currentRoom).size() != 0) {
                 dir = g.isCloseEnoughToKillPlayer(currentRoom);
-                farDirections.add(dir.get(0));
+                closeDirections.add(dir.get(0));
                 if (g.isCloseEnoughToKillPlayer(currentRoom).size() > 1) { 
-                    farDirections.add(dir.get(1));
+                    closeDirections.add(dir.get(1));
                 }
             }
             
@@ -216,19 +216,21 @@ public class Main {
             }
         
         }
-        if (farDirections.size() != 0) {
-            System.out.println("You hear a distant noise to the...");
-            System.out.println(farDirections);
-        } 
+        //if (farDirections.size() != 0) {
+            //System.out.println("You hear a distant noise to the...");
+            //System.out.println(farDirections);
+        //} 
         if (closeDirections.size() != 0) {
-            System.out.println("You hear a LOUD SPOOKY NOISE to the..");
+            //System.out.println("You hear a LOUD SPOOKY NOISE to the..");
+            System.out.println("You hear a spooky noise to the..");
             System.out.println(closeDirections);
         }
-        if (farDirections.size() == 0 && closeDirections.size() == 0) {
+        //if (farDirections.size() == 0 && closeDirections.size() == 0) {
+        if (closeDirections.size() == 0) {
             System.out.println("...You hear nothing......   .....spooky...");
         }
         System.out.println();
-        farDirections.clear();
+        //farDirections.clear();
         closeDirections.clear();
 
     }
