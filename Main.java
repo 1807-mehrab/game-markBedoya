@@ -174,9 +174,9 @@ public class Main {
                     //System.out.printl(g.isClosetoPlayer(currentRoom) == null);
                 //}
                 
-                g.printCordinates(); 		
+                //g.printCordinates(); 		
             }
-            currentRoom.printCordinates();
+            //currentRoom.printCordinates();
 
             this.currentRoom = nextRoom;
 
