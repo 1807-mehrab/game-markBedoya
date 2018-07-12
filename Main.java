@@ -97,8 +97,10 @@ public class Main {
             System.out.println("--------------------------------------------------");
             System.out.println("You hurry back to what feels like the front door..");
             System.out.println("... IT UNLOCKS! ... and you run out ");
-            System.out.println("YOU WIN!");
-            System.out.println("the end.");
+            System.out.println("-------------------------------------------------");
+            System.out.println("               !!  YOU WIN  !!");
+            System.out.println("               !!  THE END  !!");
+            System.out.println("-------------------------------------------------");
         }
         if (playerHasDied == true) {
             System.out.println("--------------------------------------------------");
@@ -106,10 +108,12 @@ public class Main {
             System.out.println("          !!!  YOU SCREAM IN FEAR  !!!");
             System.out.println("           !!  AHHHHHHHHHHhhhhhhh  !!");
             System.out.println("--------------------------------------------------");
-            System.out.println("but... before you have a chance to move...");
-            System.out.println("...you die");
-            System.out.println("YOU LOSE!");
-            System.out.println("the end.");
+            System.out.println("     but... before you have a chance to move...");
+            System.out.println("                ...you die");
+            System.out.println("-------------------------------------------------");
+            System.out.println("               !!  YOU LOSE  !!");
+            System.out.println("               !!  THE END  !!");
+            System.out.println("-------------------------------------------------");
         }
         System.out.println("Thanks for playing.");
     }
